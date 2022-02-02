@@ -1,0 +1,240 @@
+
+AssignmentB2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  0000018e  2**0
+                  ALLOC, LOAD, DATA
+  1 .text         000000e4  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      0000002f  00000000  00000000  0000018e  2**0
+                  CONTENTS, READONLY
+  3 .debug_aranges 00000058  00000000  00000000  000001bd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000dbf  00000000  00000000  00000215  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 000008d7  00000000  00000000  00000fd4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   00000446  00000000  00000000  000018ab  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  000000a4  00000000  00000000  00001cf4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    0000027d  00000000  00000000  00001d98  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    000001d1  00000000  00000000  00002015  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000048  00000000  00000000  000021e6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .text         00000004  00000132  00000132  00000186  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 12 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00002230  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .text.checkButton 00000032  000000e4  000000e4  00000138  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 14 .text.opdracht6 0000001c  00000116  00000116  0000016a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.main    00000004  00000136  00000136  0000018a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+   8:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+   c:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  10:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  14:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  18:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  1c:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  20:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  24:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  28:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  2c:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  30:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  34:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  38:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  3c:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  40:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  44:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  48:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  4c:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  50:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  54:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  58:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  5c:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  60:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  64:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  68:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  6c:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  70:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  74:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  78:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  7c:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  80:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  84:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+  88:	0c 94 99 00 	jmp	0x132	; 0x132 <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	ec e8       	ldi	r30, 0x8C	; 140
+  9a:	f0 e0       	ldi	r31, 0x00	; 0
+  9c:	40 e0       	ldi	r20, 0x00	; 0
+  9e:	19 c0       	rjmp	.+50     	; 0xd2 <__do_clear_bss+0x8>
+  a0:	b7 91       	elpm	r27, Z+
+  a2:	a7 91       	elpm	r26, Z+
+  a4:	37 91       	elpm	r19, Z+
+  a6:	27 91       	elpm	r18, Z+
+  a8:	07 91       	elpm	r16, Z+
+  aa:	07 fd       	sbrc	r16, 7
+  ac:	0e c0       	rjmp	.+28     	; 0xca <__do_clear_bss>
+  ae:	97 91       	elpm	r25, Z+
+  b0:	87 91       	elpm	r24, Z+
+  b2:	ef 01       	movw	r28, r30
+  b4:	f9 2f       	mov	r31, r25
+  b6:	e8 2f       	mov	r30, r24
+  b8:	0b bf       	out	0x3b, r16	; 59
+  ba:	07 90       	elpm	r0, Z+
+  bc:	0d 92       	st	X+, r0
+  be:	a2 17       	cp	r26, r18
+  c0:	b3 07       	cpc	r27, r19
+  c2:	d9 f7       	brne	.-10     	; 0xba <__do_copy_data+0x22>
+  c4:	fe 01       	movw	r30, r28
+  c6:	1b be       	out	0x3b, r1	; 59
+  c8:	04 c0       	rjmp	.+8      	; 0xd2 <__do_clear_bss+0x8>
+
+000000ca <__do_clear_bss>:
+  ca:	1d 92       	st	X+, r1
+  cc:	a2 17       	cp	r26, r18
+  ce:	b3 07       	cpc	r27, r19
+  d0:	e1 f7       	brne	.-8      	; 0xca <__do_clear_bss>
+  d2:	ec 38       	cpi	r30, 0x8C	; 140
+  d4:	f4 07       	cpc	r31, r20
+  d6:	21 f7       	brne	.-56     	; 0xa0 <__do_copy_data+0x8>
+  d8:	0e 94 9b 00 	call	0x136	; 0x136 <main>
+  dc:	0c 94 70 00 	jmp	0xe0	; 0xe0 <_exit>
+
+000000e0 <_exit>:
+  e0:	f8 94       	cli
+
+000000e2 <__stop_program>:
+  e2:	ff cf       	rjmp	.-2      	; 0xe2 <__stop_program>
+
+Disassembly of section .text:
+
+00000132 <__bad_interrupt>:
+ 132:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.checkButton:
+
+000000e4 <checkButton>:
+int checkButton(int ms)
+{
+	const int oneHrz = 10000;
+	const int fourHrz = oneHrz/4;
+	
+	for (int i=0; i<ms; i++) {
+  e4:	20 e0       	ldi	r18, 0x00	; 0
+  e6:	30 e0       	ldi	r19, 0x00	; 0
+  e8:	12 c0       	rjmp	.+36     	; 0x10e <checkButton+0x2a>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  ea:	e9 ef       	ldi	r30, 0xF9	; 249
+  ec:	f0 e0       	ldi	r31, 0x00	; 0
+  ee:	31 97       	sbiw	r30, 0x01	; 1
+  f0:	f1 f7       	brne	.-4      	; 0xee <checkButton+0xa>
+  f2:	00 c0       	rjmp	.+0      	; 0xf4 <checkButton+0x10>
+  f4:	00 00       	nop
+		_delay_ms( 1 );		// library function (max 30 ms at 8MHz)
+	
+	if (PINC & 0x01)
+  f6:	98 9b       	sbis	0x13, 0	; 19
+  f8:	08 c0       	rjmp	.+16     	; 0x10a <checkButton+0x26>
+	{
+		if (ms == oneHrz) ms = fourHrz;
+  fa:	80 31       	cpi	r24, 0x10	; 16
+  fc:	97 42       	sbci	r25, 0x27	; 39
+  fe:	19 f4       	brne	.+6      	; 0x106 <checkButton+0x22>
+ 100:	84 ec       	ldi	r24, 0xC4	; 196
+ 102:	99 e0       	ldi	r25, 0x09	; 9
+ 104:	02 c0       	rjmp	.+4      	; 0x10a <checkButton+0x26>
+		else ms = oneHrz;
+ 106:	80 e1       	ldi	r24, 0x10	; 16
+ 108:	97 e2       	ldi	r25, 0x27	; 39
+int checkButton(int ms)
+{
+	const int oneHrz = 10000;
+	const int fourHrz = oneHrz/4;
+	
+	for (int i=0; i<ms; i++) {
+ 10a:	2f 5f       	subi	r18, 0xFF	; 255
+ 10c:	3f 4f       	sbci	r19, 0xFF	; 255
+ 10e:	28 17       	cp	r18, r24
+ 110:	39 07       	cpc	r19, r25
+ 112:	5c f3       	brlt	.-42     	; 0xea <checkButton+0x6>
+		if (ms == oneHrz) ms = fourHrz;
+		else ms = oneHrz;
+	}
+	}
+	return ms;
+}
+ 114:	08 95       	ret
+
+Disassembly of section .text.opdracht6:
+
+00000116 <opdracht6>:
+
+int opdracht6()
+{	
+	int ms = 10000;
+	DDRD = 0xFF;
+ 116:	8f ef       	ldi	r24, 0xFF	; 255
+ 118:	81 bb       	out	0x11, r24	; 17
+	PORTC = 0x10;
+ 11a:	80 e1       	ldi	r24, 0x10	; 16
+ 11c:	85 bb       	out	0x15, r24	; 21
+	return ms;
+}
+
+int opdracht6()
+{	
+	int ms = 10000;
+ 11e:	80 e1       	ldi	r24, 0x10	; 16
+ 120:	97 e2       	ldi	r25, 0x27	; 39
+	DDRD = 0xFF;
+	PORTC = 0x10;
+	
+	while(1)
+	{
+		PORTD = 0x80;
+ 122:	20 e8       	ldi	r18, 0x80	; 128
+ 124:	22 bb       	out	0x12, r18	; 18
+		ms = checkButton(ms);
+ 126:	0e 94 72 00 	call	0xe4	; 0xe4 <__data_load_end>
+		PORTD = 0x00;
+ 12a:	12 ba       	out	0x12, r1	; 18
+		ms = checkButton(ms);
+ 12c:	0e 94 72 00 	call	0xe4	; 0xe4 <__data_load_end>
+ 130:	f8 cf       	rjmp	.-16     	; 0x122 <opdracht6+0xc>
+
+Disassembly of section .text.main:
+
+00000136 <main>:
+int opdracht5();
+int opdracht6();
+
+int main(void)
+{
+	return opdracht6();
+ 136:	0e 94 8b 00 	call	0x116	; 0x116 <opdracht6>

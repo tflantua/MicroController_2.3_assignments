@@ -4,10 +4,11 @@
  * Created: 2/2/2022 11:11:23 AM
  *  Author: thoma
  */ 
+
 #include <xc.h>
 #include <util/delay.h>
 
-void wait( int ms )
+void waitFunction( int ms )
 /* 
 short:			Busy wait number of millisecs
 inputs:			int ms (Number of millisecs to busy wait)
@@ -29,9 +30,9 @@ int main(void)
     while(1)
     {
         PORTD = 0xAA;
-		wait(2000);
-		PORTD = 0x55;
-		wait(2000);
+        waitFunction(2000);
+        PORTD = 0x55;
+        waitFunction(2000);
     }
 	
 	return 1;
