@@ -41,33 +41,22 @@ int main(void)
 	return 0;
 }
 
+typedef struct {
+	int ddr;
+	int port;
+} LED_SETTINGS;
+
+LED_SETTINGS leds[6] = {
+	{0x03, 0x01},
+	{0x03, 0x02},
+	{0x06, 0x02},
+	{0x06, 0x04},
+	{0x05, 0x04},
+	{0x05, 0x01},
+};
+
 void setCharliePlexingLed(int lednr)
 {
-	switch (lednr)
-	{
-		case 0:
-		DDRD = 0x03;
-		PORTD = 0x01;
-		break;
-		case 1:
-		DDRD = 0x03;
-		PORTD = 0x02;
-		break;
-		case 2:
-		DDRD = 0x06;
-		PORTD = 0x02;
-		break;
-		case 3:
-		DDRD = 0x06;
-		PORTD = 0x04;
-		break;
-		case 4:
-		DDRD = 0x05;
-		PORTD = 0x04;
-		break;
-		case 5:
-		DDRD = 0x05;
-		PORTD = 0x01;
-		break;
-	}
+	DDRD = leds[lednr].ddr;
+	PORTD = leds[lednr].port;
 }
