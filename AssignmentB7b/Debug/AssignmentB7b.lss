@@ -100,8 +100,8 @@ Disassembly of section .text.waitFunction:
 
 00000100 <waitFunction>:
 notes:			Busy wait, not very accurate. Make sure (external)
-				clock value is set. This is used by _delay_ms inside
-				util/delay.h
+clock value is set. This is used by _delay_ms inside
+util/delay.h
 ***********************/
 {
 	for (int i=0; i<ms; i++) {
@@ -136,7 +136,7 @@ Disassembly of section .text.setCharliePlexingLed:
 	return 0;
 }
 
-void setCharliePlexingLed(int lednr) 
+void setCharliePlexingLed(int lednr)
 {
 	switch (lednr)
   a4:	82 30       	cpi	r24, 0x02	; 2
@@ -216,25 +216,25 @@ Disassembly of section .text.main:
 
 int main(void)
 {
-    while(1)
-    {
+	while(1)
+	{
 		for (int i = 0; i < 6; i++)
  11e:	c0 e0       	ldi	r28, 0x00	; 0
  120:	d0 e0       	ldi	r29, 0x00	; 0
  122:	08 c0       	rjmp	.+16     	; 0x134 <main+0x16>
 		{
-        setCharliePlexingLed(i);
+			setCharliePlexingLed(i);
  124:	ce 01       	movw	r24, r28
  126:	0e 94 52 00 	call	0xa4	; 0xa4 <__data_load_end>
-		waitFunction(500);
+			waitFunction(500);
  12a:	84 ef       	ldi	r24, 0xF4	; 244
  12c:	91 e0       	ldi	r25, 0x01	; 1
  12e:	0e 94 80 00 	call	0x100	; 0x100 <waitFunction>
 
 int main(void)
 {
-    while(1)
-    {
+	while(1)
+	{
 		for (int i = 0; i < 6; i++)
  132:	21 96       	adiw	r28, 0x01	; 1
  134:	c6 30       	cpi	r28, 0x06	; 6

@@ -1,9 +1,9 @@
 /*
- * main.c
- *
- * Created: 2/8/2022 12:42:06 PM
- *  Author: thoma
- */ 
+* main.c
+*
+* Created: 2/8/2022 12:42:06 PM
+*  Author: thoma
+*/
 
 #define F_CPU 8e6
 
@@ -11,13 +11,13 @@
 #include <util/delay.h>
 
 void waitFunction( int ms )
-/* 
+/*
 short:			Busy wait number of millisecs
 inputs:			int ms (Number of millisecs to busy wait)
-outputs:	
+outputs:
 notes:			Busy wait, not very accurate. Make sure (external)
-				clock value is set. This is used by _delay_ms inside
-				util/delay.h
+clock value is set. This is used by _delay_ms inside
+util/delay.h
 ***********************/
 {
 	for (int i=0; i<ms; i++) {
@@ -29,19 +29,19 @@ void setCharliePlexingLed(int lednr);
 
 int main(void)
 {
-    while(1)
-    {
+	while(1)
+	{
 		for (int i = 0; i < 6; i++)
 		{
-        setCharliePlexingLed(i);
-		waitFunction(500);
+			setCharliePlexingLed(i);
+			waitFunction(500);
 		}
-    }
+	}
 	
 	return 0;
 }
 
-void setCharliePlexingLed(int lednr) 
+void setCharliePlexingLed(int lednr)
 {
 	switch (lednr)
 	{
