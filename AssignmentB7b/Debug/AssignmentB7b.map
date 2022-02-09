@@ -320,20 +320,20 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0xbb0
+.debug_info     0x0000000000000000      0xb6c
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x780 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
- .debug_info    0x0000000000000780      0x430 main.o
+ .debug_info    0x0000000000000780      0x3ec main.o
 
 .debug_abbrev   0x0000000000000000      0x834
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x718 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
  .debug_abbrev  0x0000000000000718      0x11c main.o
 
-.debug_line     0x0000000000000000      0x304
+.debug_line     0x0000000000000000      0x311
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x16d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
- .debug_line    0x000000000000016d      0x197 main.o
+ .debug_line    0x000000000000016d      0x1a4 main.o
 
 .debug_frame    0x0000000000000000       0x44
  *(.debug_frame)
@@ -344,9 +344,9 @@ END GROUP
  .debug_str     0x0000000000000000      0x27d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
  .debug_str     0x000000000000027d        0x0 main.o
 
-.debug_loc      0x0000000000000000      0x126
+.debug_loc      0x0000000000000000      0x14a
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x126 main.o
+ .debug_loc     0x0000000000000000      0x14a main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -382,20 +382,20 @@ LOAD data_init
                 0x0000000000000000       0x3c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
 
 .text.setCharliePlexingLed
-                0x00000000000000a4       0x58
+                0x00000000000000a4       0x5c
  .text.setCharliePlexingLed
-                0x00000000000000a4       0x58 main.o
+                0x00000000000000a4       0x5c main.o
                 0x00000000000000a4                setCharliePlexingLed
 
-.text.main      0x00000000000000fc       0x22
- .text.main     0x00000000000000fc       0x22 main.o
-                0x00000000000000fc                main
-
 .text.waitFunction
-                0x000000000000011e       0x1e
+                0x0000000000000100       0x1e
  .text.waitFunction
-                0x000000000000011e       0x1e main.o
-                0x000000000000011e                waitFunction
+                0x0000000000000100       0x1e main.o
+                0x0000000000000100                waitFunction
+
+.text.main      0x000000000000011e       0x1e
+ .text.main     0x000000000000011e       0x1e main.o
+                0x000000000000011e                main
 
 .text           0x000000000000013c        0x4
  .text          0x000000000000013c        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o

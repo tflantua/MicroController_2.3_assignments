@@ -5,6 +5,8 @@
  *  Author: thoma
  */ 
 
+#define F_CPU 8e6
+
 #include <xc.h>
 #include <util/delay.h>
 
@@ -29,18 +31,11 @@ int main(void)
 {
     while(1)
     {
-        setCharliePlexingLed(0);
-		waitFunction(5000);
-		setCharliePlexingLed(1);
-		waitFunction(5000);
-//		setCharliePlexingLed(2);
-//		waitFunction(500);
-//		setCharliePlexingLed(3);
-//		waitFunction(5000);
-//		setCharliePlexingLed(4);
-//		waitFunction(5000);
-//		setCharliePlexingLed(5);
-//		waitFunction(5000);
+		for (int i = 0; i < 6; i++)
+		{
+        setCharliePlexingLed(i);
+		waitFunction(500);
+		}
     }
 	
 	return 0;
@@ -48,8 +43,6 @@ int main(void)
 
 void setCharliePlexingLed(int lednr) 
 {
-	
-	
 	switch (lednr)
 	{
 		case 0:
