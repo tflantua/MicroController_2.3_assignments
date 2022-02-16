@@ -19,22 +19,6 @@
 #include <avr/interrupt.h>
 #include "LCD.H"
 
-
-/******************************************************************
-short:			Busy wait number of millisecs
-inputs:			int ms (Number of millisecs to busy wait)
-outputs:
-notes:			Busy wait, not very accurate. Make sure (external)
-clock value is set. This is used by _delay_ms inside
-util/delay.h
-Version :    	DMK, Initial code
-*******************************************************************/
-void wait( int ms ) {
-	for (int i=0; i<ms; i++) {
-		_delay_ms( 1 );		// library function (max 30 ms at 8MHz)
-	}
-}
-
 volatile int led = 1;
 
 /*****************************************************************
@@ -81,7 +65,7 @@ Version :    	DMK, Initial code
 
 void opdracht1en2( void );
 void opdracht3( void );
-void opdracht5( void );
+int opdracht5( void );
 void display( int digit );
 
 const unsigned char digits[16] = {
@@ -97,19 +81,30 @@ const unsigned char digits[16] = {
 	0b01101111, //9	0b01110111, //A	0b01111111, //B	0b00111001, //C	0b00111111, //D	0b01111001, //E	0b01110001  //F};
 
 int main( void ) {
-	opdracht5();
-	return 1;
+	_delay_ms(500);
+	return opdracht5();
 }
 
-void opdracht5()
+int opdracht5()
 {
-	char test = "Hello";
+	// Init I/O
+	DDRC = 0xFF;			// PORTD(7) output, PORTD(6:0) input
+	PORTC = 0xFF;
 	
 	init();
-	unsigned char t = 't';
-	lcd_writeChar(t);
 	
-	//display_text(&test);
+	char test[] = "hello";
+
+	// Write sample string
+	display_text(test);
+
+	// Loop forever
+	while (1) {
+		PORTC ^= (1<<0);	// Toggle PORTD.7
+		wait( 250 );
+	}
+
+	return 1;
 }
 
 void opdracht3(){

@@ -17,7 +17,7 @@
 
 void init();
 void display_text(char *str);
-void lcd_writeChar(unsigned char dat);
 void set_cursor(int position); 
+void wait(int ms);
 
 #endif
