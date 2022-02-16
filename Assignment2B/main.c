@@ -14,10 +14,10 @@
 ** Author: 			dkroeske@gmail.com
 ** -------------------------------------------------------------------------*/
 
-#define F_CPU 8e6
 #include <avr/io.h>
-#include <util/delay.h>
+
 #include <avr/interrupt.h>
+#include "LCD.H"
 
 
 /******************************************************************
@@ -81,6 +81,7 @@ Version :    	DMK, Initial code
 
 void opdracht1en2( void );
 void opdracht3( void );
+void opdracht5( void );
 void display( int digit );
 
 const unsigned char digits[16] = {
@@ -96,8 +97,19 @@ const unsigned char digits[16] = {
 	0b01101111, //9	0b01110111, //A	0b01111111, //B	0b00111001, //C	0b00111111, //D	0b01111001, //E	0b01110001  //F};
 
 int main( void ) {
-	opdracht3();
+	opdracht5();
 	return 1;
+}
+
+void opdracht5()
+{
+	char test = "Hello";
+	
+	init();
+	unsigned char t = 't';
+	lcd_writeChar(t);
+	
+	//display_text(&test);
 }
 
 void opdracht3(){
@@ -105,13 +117,6 @@ void opdracht3(){
 	while(1){
 		for (int i = -1; i < 17; i++)
 		{
-			if(button1Pressed && button2Pressed){
-				
-			}else if(button1Pressed){
-				
-			}else if(button2Pressed){
-				
-			}
 			wait(1);
 		}
 	}

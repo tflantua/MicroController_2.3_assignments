@@ -6,12 +6,18 @@
  *  Author: Test
  */ 
 
-#ifndef (LCD_Module)
+#ifndef LCD_Module
 #define LCD_Module
+
+
+#define F_CPU 8e6
+#include <stdio.h>
+#include <util/delay.h>
+#include <avr/io.h>
 
 void init();
 void display_text(char *str);
-void display_text(char str[]);
+void lcd_writeChar(unsigned char dat);
 void set_cursor(int position); 
 
 #endif
