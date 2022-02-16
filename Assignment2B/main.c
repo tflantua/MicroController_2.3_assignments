@@ -105,8 +105,14 @@ void opdracht3(){
 	while(1){
 		for (int i = -1; i < 17; i++)
 		{
-			display(i);
-			wait(500);
+			if(button1Pressed && button2Pressed){
+				
+			}else if(button1Pressed){
+				
+			}else if(button2Pressed){
+				
+			}
+			wait(1);
 		}
 	}
 }
