@@ -6,11 +6,29 @@
  */ 
 
 #include <xc.h>
+#include "waiting.h"
+#include "LCD.H"
+
+void adcInit(void){
+	ADMUX = 0b01100001;
+	ADCSRA = 0b11100110;
+}
 
 int main(void)
 {
-    while(1)
-    {
-        //TODO:: Please write your application code 
-    }
+	init();
+	
+	DDRA = 0xFF;
+	DDRB = 0xFF;
+	DDRD = 0xFF;
+	DDRF = 0x00;
+	
+    PORTD = 0x01;
+	adcInit();
+	
+	while(1){
+		int value = ADCH << 8 | ADCL;
+		display_text((char *) value);
+		waitFunction(100);
+	}
 }
