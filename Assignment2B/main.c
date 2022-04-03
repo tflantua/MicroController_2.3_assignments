@@ -21,6 +21,18 @@
 
 volatile int led = 1;
 
+const unsigned char digits[16] = {
+	0b00111111, // 0
+	0b00000110, // 1
+	0b01011011, //2
+	0b01001111, //3
+	0b01100110, //4
+	0b01101101, //5
+	0b01111101, //6
+	0b00000111, //7
+	0b01111111, //8
+	0b01101111, //9	0b01110111, //A	0b01111111, //B	0b00111001, //C	0b00111111, //D	0b01111001, //E	0b01110001  //F};
+
 /*****************************************************************
 short:			ISR INT0
 inputs:
@@ -28,14 +40,16 @@ outputs:
 notes:			Set PORTD.5
 Version :    	DMK, Initial code
 *******************************************************************/
+
 ISR( INT0_vect ) {
-	if(led >= 1<<7)
+	//PORTD |= (1<<5);
+	led++;
+	if(led > 15 || led < 0)
 	{
-		led = 1;
+		PORTC = digits[14];
+		}else{
+		PORTC = digits[led];
 	}
-	led = led << 1;
-	PORTC = (led);
-	
 }
 
 /******************************************************************
@@ -46,14 +60,18 @@ notes:			Clear PORTD.5
 Version :    	DMK, Initial code
 *******************************************************************/
 ISR( INT1_vect ) {
-	if(led <= 1)
+	//PORTD &= ~(1<<5);
+	led--;
+	if(led > 15 || led < 0)
 	{
-		led = 1<<7;
+		PORTC = digits[14];
 	}
-	led = led >> 1;
-	PORTC = (led);
-	
+	else{
+		PORTC = digits[led];
+	}
 }
+
+
 
 /******************************************************************
 short:			main() loop, entry point of executable
@@ -68,21 +86,11 @@ void opdracht3( void );
 int opdracht5( void );
 void display( int digit );
 
-const unsigned char digits[16] = {
-	0b00111111, // 0
-	0b00000110, // 1
-	0b01011011, //2
-	0b01001111, //3
-	0b01100110, //4
-	0b01101101, //5
-	0b01111101, //6
-	0b00000111, //7
-	0b01111111, //8
-	0b01101111, //9	0b01110111, //A	0b01111111, //B	0b00111001, //C	0b00111111, //D	0b01111001, //E	0b01110001  //F};
 
 int main( void ) {
 	_delay_ms(500);
-	return opdracht5();
+	opdracht5();
+	return 1;
 }
 
 int opdracht5()
@@ -140,7 +148,7 @@ void opdracht1en2( void ){
 	sei();
 
 	while (1) {
-		PORTD ^= (1<<7);	// Toggle PORTD.7
+		//PORTD ^= (1<<7);	// Toggle PORTD.7
 		wait( 500 );
 	}
 }

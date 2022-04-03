@@ -63,9 +63,9 @@ C_DEPS_AS_ARGS +=  \
 LCD.d \
 main.d
 
-OUTPUT_FILE_PATH +=AssignmentB2.elf
+OUTPUT_FILE_PATH +=Les3.elf
 
-OUTPUT_FILE_PATH_AS_ARGS +=AssignmentB2.elf
+OUTPUT_FILE_PATH_AS_ARGS +=Les3.elf
 
 ADDITIONAL_DEPENDENCIES:=
 
@@ -117,11 +117,11 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER_SCRIPT_DEP)
 	@echo Building target: $@
 	@echo Invoking:  XC8 C Linker : 2.31
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -mcpu=ATmega128  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -Wl,-Map="AssignmentB2.map" -funsigned-char -funsigned-bitfields -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums --memorysummary,memoryfile.xml  
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -mcpu=ATmega128  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -Wl,-Map="Les3.map" -funsigned-char -funsigned-bitfields -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums --memorysummary,memoryfile.xml  
 	@echo Finished building target: $@
-	"C:\Program Files\Microchip\xc8\v2.31\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "AssignmentB2.elf" "AssignmentB2.hex"
-	"C:\Program Files\Microchip\xc8\v2.31\bin\avr-objcopy.exe" -j .eeprom --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0 --no-change-warnings -O ihex "AssignmentB2.elf" "AssignmentB2.eep" || exit 0
-	"C:\Program Files\Microchip\xc8\v2.31\bin\avr-objdump.exe" -h -S "AssignmentB2.elf" > "AssignmentB2.lss"
+	"C:\Program Files\Microchip\xc8\v2.31\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Les3.elf" "Les3.hex"
+	"C:\Program Files\Microchip\xc8\v2.31\bin\avr-objcopy.exe" -j .eeprom --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0 --no-change-warnings -O ihex "Les3.elf" "Les3.eep" || exit 0
+	"C:\Program Files\Microchip\xc8\v2.31\bin\avr-objdump.exe" -h -S "Les3.elf" > "Les3.lss"
 	
 	
 
@@ -133,5 +133,5 @@ $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER
 clean:
 	-$(RM) $(OBJS_AS_ARGS) $(EXECUTABLES)  
 	-$(RM) $(C_DEPS_AS_ARGS)   
-	rm -rf "AssignmentB2.elf" "AssignmentB2.hex" "AssignmentB2.eep" "AssignmentB2.map" "AssignmentB2.usersignatures" "AssignmentB2.a"  "AssignmentB2.lss"
+	rm -rf "Les3.elf" "Les3.hex" "Les3.eep" "Les3.map" "Les3.usersignatures" "Les3.a"  "Les3.lss"
 	

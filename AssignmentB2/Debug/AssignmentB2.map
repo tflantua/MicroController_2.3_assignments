@@ -9,6 +9,33 @@ Discarded input sections
 
  .data          0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
  .bss           0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
+ .text          0x0000000000000000        0x0 LCD.o
+ .data          0x0000000000000000        0x0 LCD.o
+ .bss           0x0000000000000000        0x0 LCD.o
+ .text.wait     0x0000000000000000       0x1e LCD.o
+ .text.lcd_strobe_lcd_e
+                0x0000000000000000       0x26 LCD.o
+ .text.init_4bits_mode
+                0x0000000000000000       0x42 LCD.o
+ .text.lcd_write_data
+                0x0000000000000000       0x24 LCD.o
+ .text.display_text
+                0x0000000000000000       0x1a LCD.o
+ .text.lcd_write_command
+                0x0000000000000000       0x24 LCD.o
+ .text.lcd_clear
+                0x0000000000000000       0x1a LCD.o
+ .text.init     0x0000000000000000       0x16 LCD.o
+ .debug_info    0x0000000000000000      0x5fa LCD.o
+ .debug_abbrev  0x0000000000000000      0x154 LCD.o
+ .debug_loc     0x0000000000000000      0x299 LCD.o
+ .debug_aranges
+                0x0000000000000000       0x58 LCD.o
+ .debug_ranges  0x0000000000000000       0x48 LCD.o
+ .debug_line    0x0000000000000000      0x29d LCD.o
+ .debug_str     0x0000000000000000        0x0 LCD.o
+ .comment       0x0000000000000000       0x30 LCD.o
+ .debug_frame   0x0000000000000000       0xb8 LCD.o
  .text          0x0000000000000000        0x0 main.o
  .data          0x0000000000000000        0x0 main.o
  .bss           0x0000000000000000        0x0 main.o
@@ -72,6 +99,7 @@ Linker script and memory map
 
 Address of section .data set to 0x800100
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
+LOAD LCD.o
 LOAD main.o
 START GROUP
 LOAD c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51/memx-const\libm.a

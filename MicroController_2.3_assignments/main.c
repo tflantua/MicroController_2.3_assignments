@@ -7,6 +7,7 @@
 
 #include <xc.h>
 #include <util/delay.h>
+#include "LCD.H"
 
 void waitFunction( int ms )
 /* 

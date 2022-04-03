@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <project>                                  
-  <executable name="Assignment2B.elf">                 
+  <executable name="Les3.elf">                 
     <memory name="program">              
       <units>bytes</units>                 
       <length>131072</length>                 
-      <used>946</used>                     
-      <free>130126</free>                     
+      <used>2165</used>                     
+      <free>128907</free>                     
     </memory>                              
     <memory name="data">                 
       <units>bytes</units>                 
       <length>4096</length>                 
-      <used>2</used>                     
-      <free>4094</free>                     
+      <used>0</used>                     
+      <free>4096</free>                     
     </memory>                              
   </executable>                            
 </project>                                 

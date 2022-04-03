@@ -135,12 +135,6 @@ Disassembly of section .text:
 Disassembly of section .text.checkButton:
 
 000000e4 <checkButton>:
-int checkButton(int ms)
-{
-	const int oneHrz = 10000;
-	const int fourHrz = oneHrz/4;
-	
-	for (int i=0; i<ms; i++) {
   e4:	20 e0       	ldi	r18, 0x00	; 0
   e6:	30 e0       	ldi	r19, 0x00	; 0
   e8:	12 c0       	rjmp	.+36     	; 0x10e <checkButton+0x2a>
@@ -156,85 +150,40 @@ int checkButton(int ms)
   f0:	f1 f7       	brne	.-4      	; 0xee <checkButton+0xa>
   f2:	00 c0       	rjmp	.+0      	; 0xf4 <checkButton+0x10>
   f4:	00 00       	nop
-		_delay_ms( 1 );		// library function (max 30 ms at 8MHz)
-	
-	if (PINC & 0x01)
   f6:	98 9b       	sbis	0x13, 0	; 19
   f8:	08 c0       	rjmp	.+16     	; 0x10a <checkButton+0x26>
-	{
-		if (ms == oneHrz) ms = fourHrz;
   fa:	80 31       	cpi	r24, 0x10	; 16
   fc:	97 42       	sbci	r25, 0x27	; 39
   fe:	19 f4       	brne	.+6      	; 0x106 <checkButton+0x22>
  100:	84 ec       	ldi	r24, 0xC4	; 196
  102:	99 e0       	ldi	r25, 0x09	; 9
  104:	02 c0       	rjmp	.+4      	; 0x10a <checkButton+0x26>
-		else ms = oneHrz;
  106:	80 e1       	ldi	r24, 0x10	; 16
  108:	97 e2       	ldi	r25, 0x27	; 39
-int checkButton(int ms)
-{
-	const int oneHrz = 10000;
-	const int fourHrz = oneHrz/4;
-	
-	for (int i=0; i<ms; i++) {
  10a:	2f 5f       	subi	r18, 0xFF	; 255
  10c:	3f 4f       	sbci	r19, 0xFF	; 255
  10e:	28 17       	cp	r18, r24
  110:	39 07       	cpc	r19, r25
  112:	5c f3       	brlt	.-42     	; 0xea <checkButton+0x6>
-		if (ms == oneHrz) ms = fourHrz;
-		else ms = oneHrz;
-	}
-	}
-	return ms;
-}
  114:	08 95       	ret
 
 Disassembly of section .text.opdracht6:
 
 00000116 <opdracht6>:
-
-int opdracht6()
-{	
-	int ms = 10000;
-	DDRD = 0xFF;
  116:	8f ef       	ldi	r24, 0xFF	; 255
  118:	81 bb       	out	0x11, r24	; 17
-	PORTC = 0x10;
  11a:	80 e1       	ldi	r24, 0x10	; 16
  11c:	85 bb       	out	0x15, r24	; 21
-	return ms;
-}
-
-int opdracht6()
-{	
-	int ms = 10000;
  11e:	80 e1       	ldi	r24, 0x10	; 16
  120:	97 e2       	ldi	r25, 0x27	; 39
-	DDRD = 0xFF;
-	PORTC = 0x10;
-	
-	while(1)
-	{
-		PORTD = 0x80;
  122:	20 e8       	ldi	r18, 0x80	; 128
  124:	22 bb       	out	0x12, r18	; 18
-		ms = checkButton(ms);
  126:	0e 94 72 00 	call	0xe4	; 0xe4 <__data_load_end>
-		PORTD = 0x00;
  12a:	12 ba       	out	0x12, r1	; 18
-		ms = checkButton(ms);
  12c:	0e 94 72 00 	call	0xe4	; 0xe4 <__data_load_end>
  130:	f8 cf       	rjmp	.-16     	; 0x122 <opdracht6+0xc>
 
 Disassembly of section .text.main:
 
 00000136 <main>:
-int opdracht5();
-int opdracht6();
-
-int main(void)
-{
-	return opdracht6();
  136:	0e 94 8b 00 	call	0x116	; 0x116 <opdracht6>
