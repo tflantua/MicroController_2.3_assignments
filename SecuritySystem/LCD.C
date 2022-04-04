@@ -166,8 +166,10 @@ void lcd_clear() {
 	lcd_write_command (0x80);						//Cursor terug naar start
 }
 
-void init()
+void lcd_init()
 {
+	DDRC = 0xFF;			// PORTD(7) output, PORTD(6:0) input
+	PORTC = 0xFF;
 	
 	// Init LCD
 	init_4bits_mode();

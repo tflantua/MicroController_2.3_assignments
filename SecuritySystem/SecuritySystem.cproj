@@ -119,6 +119,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ADCLaserIO.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ADCLaserIO.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="LCD.C">
       <SubType>compile</SubType>
     </Compile>

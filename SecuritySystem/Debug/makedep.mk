@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+ADCLaserIO.c
+
 LCD.C
 
 main.c
