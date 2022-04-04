@@ -13,6 +13,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Assignment2B", "Assignment2
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "SecuritySystem", "SecuritySystem\SecuritySystem.cproj", "{AE7D98BE-E1BA-4017-8057-26120FFF2E6C}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "8t7seg", "8t7seg\8t7seg.cproj", "{2064939C-CEBE-4653-8246-04C9A71A9A95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -39,6 +41,10 @@ Global
 		{AE7D98BE-E1BA-4017-8057-26120FFF2E6C}.Debug|AVR.Build.0 = Debug|AVR
 		{AE7D98BE-E1BA-4017-8057-26120FFF2E6C}.Release|AVR.ActiveCfg = Release|AVR
 		{AE7D98BE-E1BA-4017-8057-26120FFF2E6C}.Release|AVR.Build.0 = Release|AVR
+		{2064939C-CEBE-4653-8246-04C9A71A9A95}.Debug|AVR.ActiveCfg = Debug|AVR
+		{2064939C-CEBE-4653-8246-04C9A71A9A95}.Debug|AVR.Build.0 = Debug|AVR
+		{2064939C-CEBE-4653-8246-04C9A71A9A95}.Release|AVR.ActiveCfg = Release|AVR
+		{2064939C-CEBE-4653-8246-04C9A71A9A95}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
