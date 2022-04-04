@@ -10,6 +10,8 @@
 #include "LCD.H"
 #include "ADCLaserIO.h"
 
+#define TRIGGER_VALUE 80
+
 //Callback function triggered by interrupt of the ADC
 static void (*callback)(uInt16) = NULL;
 
@@ -34,7 +36,7 @@ void ADCLaserIO_start(void (*_ptr)(uInt16)){
 	sei();
 }
 
-static void ADCLaserIO_stop(){
+void ADCLaserIO_stop(){
 	adc_deinit();
 	PORTD &= ~(0x01);
 }
