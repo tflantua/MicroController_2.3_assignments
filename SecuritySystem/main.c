@@ -66,14 +66,12 @@ int main(void)
 	
 	DDRB = 0xFF;					// set PORTB for compare output
 	DDRA = 0xFF;					// set PORTA for output in main program
-	Buzzert_init();
-	Buzzert_start();
+	waitFunction(100);
 	
 	Eight7seg_Init();
 	Keypad_init(main_lcd_locked, main_lcd_unlocked, main_lcd_wrongCode);
 	
 	main_lcd_unlocked();
-	
 	while(1){
 		Keypad_checkKey();
 		waitFunction(100);

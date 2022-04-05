@@ -20,7 +20,7 @@
 
 void spi_masterInit(void)
 {
-	DDR_SPI = 0xff;							// All pins output: MOSI, SCK, SS, SS_display as output
+	DDR_SPI |= 0xff;							// All pins output: MOSI, SCK, SS, SS_display as output
 	DDR_SPI &= ~BIT(SPI_MISO);				// 	except: MISO input
 	PORT_SPI |= BIT(SPI_SS);				// SS_ADC == 1: deselect slave
 	SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR1);	// or: SPCR = 0b11010010;

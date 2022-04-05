@@ -16,7 +16,7 @@
 // Initialize the driver chip (type MAX 7219)
 void Eight7seg_Init()
 {
-	DDRB=0x01;					  	// Set PB0 pin as output for display select
+	DDRB |= 0x01;					  	// Set PB0 pin as output for display select
 	spi_masterInit();
 	
 	spi_slaveSelect(slaveAddress);				// Select display chip (MAX7219)
