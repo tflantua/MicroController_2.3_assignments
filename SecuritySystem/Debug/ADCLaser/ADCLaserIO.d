@@ -16,7 +16,7 @@ ADCLaser/ADCLaserIO.d ADCLaser/ADCLaserIO.o: ../ADCLaser/ADCLaserIO.c \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h \
- ../ADCLaser/ADCLaserIO.h
+ ../ADCLaser/ADCLaserIO.h ../ADCLaser/../waiting.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -53,3 +53,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h:
 
 ../ADCLaser/ADCLaserIO.h:
+
+../ADCLaser/../waiting.h:

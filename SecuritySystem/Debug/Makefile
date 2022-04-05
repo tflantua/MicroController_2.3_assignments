@@ -37,6 +37,7 @@ SUBDIRS :=  \
 ../ADCLaser \
 ../Keypad \
 ../8t7seg \
+../Buzzert \
 ../Timer \
 ../SPI
 
@@ -45,6 +46,7 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../8t7seg/8t7seg.c \
 ../ADCLaser/ADCLaserIO.c \
+../Buzzert/Buzzert.c \
 ../Keypad/Keypad.c \
 ../LCD/LCD.c \
 ../main.c \
@@ -62,6 +64,7 @@ ASM_SRCS +=
 OBJS +=  \
 8t7seg/8t7seg.o \
 ADCLaser/ADCLaserIO.o \
+Buzzert/Buzzert.o \
 Keypad/Keypad.o \
 LCD/LCD.o \
 main.o \
@@ -72,6 +75,7 @@ waiting.o
 OBJS_AS_ARGS +=  \
 8t7seg/8t7seg.o \
 ADCLaser/ADCLaserIO.o \
+Buzzert/Buzzert.o \
 Keypad/Keypad.o \
 LCD/LCD.o \
 main.o \
@@ -82,6 +86,7 @@ waiting.o
 C_DEPS +=  \
 8t7seg/8t7seg.d \
 ADCLaser/ADCLaserIO.d \
+Buzzert/Buzzert.d \
 Keypad/Keypad.d \
 LCD/LCD.d \
 main.d \
@@ -92,6 +97,7 @@ waiting.d
 C_DEPS_AS_ARGS +=  \
 8t7seg/8t7seg.d \
 ADCLaser/ADCLaserIO.d \
+Buzzert/Buzzert.d \
 Keypad/Keypad.d \
 LCD/LCD.d \
 main.d \
@@ -121,6 +127,13 @@ LINKER_SCRIPT_DEP+=
 	
 
 ADCLaser/ADCLaserIO.o: ../ADCLaser/ADCLaserIO.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega128  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega128__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Buzzert/Buzzert.o: ../Buzzert/Buzzert.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega128  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega128__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

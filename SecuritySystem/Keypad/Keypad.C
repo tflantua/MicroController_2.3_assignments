@@ -26,7 +26,7 @@ static int currentNumber = 0;
 static int side = 1;
 static int inputIndex = 0;
 
-static int locked = 1;
+static int locked = 0;
 
 static void Keypad_rotate(int rotate);
 static void Keypad_unlock();
@@ -47,7 +47,6 @@ void Keypad_checkKey(){
 			locked = 1;
 			Keypad_reset();
 			locked_callback();
-			ADCLaserIO_start(NULL);
 		}
 		return;
 	}
@@ -77,13 +76,14 @@ static void Keypad_rotate(int rotate){
 	rotate = rotateLeft;
 	
 	if(side != rotate){
-		if(inputIndex >= 3){
-			Keypad_unlock();
-			return;
-		}
 		side = rotate;
 		inputcode[inputIndex] = currentNumber;
 		inputIndex++;
+		
+		if(inputIndex > 3){
+			Keypad_unlock();
+			return;
+		}
 	}
 	
 	

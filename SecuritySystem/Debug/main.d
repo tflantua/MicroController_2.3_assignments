@@ -21,7 +21,7 @@ main.d main.o: .././main.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
  .././ADCLaser/ADCLaserIO.h .././Keypad/Keypad.h .././8t7seg/8t7seg.h \
- .././Timer/Timer.h
+ .././Timer/Timer.h .././Buzzert/Buzzert.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -74,3 +74,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 .././8t7seg/8t7seg.h:
 
 .././Timer/Timer.h:
+
+.././Buzzert/Buzzert.h:

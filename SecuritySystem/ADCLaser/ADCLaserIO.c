@@ -1,14 +1,15 @@
 /*
- * ADCLaserIO.c
- *
- * Created: 04/04/2022 15:16:44
- *  Author: rick
- */ 
+* ADCLaserIO.c
+*
+* Created: 04/04/2022 15:16:44
+*  Author: rick
+*/
 
 #include <xc.h>
 #include <stdio.h>
 #include <avr/interrupt.h>
 #include "ADCLaserIO.h"
+#include "../waiting.h"
 
 #define TRIGGER_VALUE 80
 
@@ -22,17 +23,19 @@ void ADCLaserIO_start(void (*_ptr)(uInt16)){
 	if(callback == NULL){
 		if (_ptr !=NULL) callback = _ptr;
 	}
-	adc_init();
-	
-	TCCR0=(5<<CS00);
-	TIMSK=(1<<TOIE0);
-	
 	//Set port F1 to input
 	DDRF &= ~(0x02);
 	//Set port D0 to output
 	DDRD |= 0x01;
 	//Set port D0 high
 	PORTD |= 0x01;
+	
+	waitFunction(10);
+	
+	adc_init();
+	
+	TCCR0=(5<<CS00);
+	TIMSK=(1<<TOIE0);
 	
 	//Enable global interrupts
 	sei();
@@ -62,9 +65,9 @@ static void adc_deinit(){
 	ADCSRA &= ~((1<<ADIE)|(1<<ADFR));
 }
 
-/* 
-	Interrupt service routine for ADC to check if
-	laser has been interrupted.
+/*
+Interrupt service routine for ADC to check if
+laser has been interrupted.
 */
 ISR(ADC_vect){
 	//Calculates the light value in percentages
@@ -76,7 +79,7 @@ ISR(ADC_vect){
 	}
 }
 
-/* 
-	Necessary timer.
+/*
+Necessary timer.
 */
 ISR(TIMER0_OVF_vect){}

@@ -131,6 +131,12 @@
     <Compile Include="ADCLaser\ADCLaserIO.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Buzzert\Buzzert.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Buzzert\Buzzert.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Keypad\Keypad.c">
       <SubType>compile</SubType>
     </Compile>
@@ -170,6 +176,7 @@
     <Folder Include="ADCLaser" />
     <Folder Include="Keypad" />
     <Folder Include="8t7seg" />
+    <Folder Include="Buzzert" />
     <Folder Include="Timer" />
     <Folder Include="SPI" />
   </ItemGroup>

@@ -13,13 +13,16 @@
 #include "Keypad/Keypad.h"
 #include "8t7seg/8t7seg.h"
 #include "Timer/Timer.h"
+#include "Buzzert/Buzzert.h"
 
-#define  timeBeforeAlarm 30
+#define  timeBeforeAlarm 60
 
 void main_alarm(){
 	lcd_clear();
 	char text[] = "Alarm";
 	display_text(text);
+	
+	Buzzert_start();
 }
 
 void main_laserCallback(uInt16 value){
@@ -30,10 +33,15 @@ void main_laserCallback(uInt16 value){
 	Timer_init(main_alarm, timeBeforeAlarm);
 }
 
+void main_start_laser(){
+	ADCLaserIO_start(main_laserCallback);
+}
+
 void main_lcd_locked(){
 	lcd_clear();
 	char text[] = "locked";
 	display_text(text);
+	Timer_init(main_start_laser, 10);
 }
 
 void main_lcd_unlocked(){
@@ -42,6 +50,7 @@ void main_lcd_unlocked(){
 	display_text(text);
 	
 	Timer_deInit();
+	Buzzert_stop();
 }
 
 void main_lcd_wrongCode(){
@@ -53,14 +62,13 @@ void main_lcd_wrongCode(){
 
 int main(void)
 {
-	
-	
 	lcd_init();
+	Buzzert_init();
 	
 	Eight7seg_Init();
 	Keypad_init(main_lcd_locked, main_lcd_unlocked, main_lcd_wrongCode);
 	
-	ADCLaserIO_start(main_laserCallback);
+	main_lcd_unlocked();
 	
 	while(1){
 		Keypad_checkKey();
