@@ -15,7 +15,7 @@
 #include "Timer/Timer.h"
 #include "Buzzert/Buzzert.h"
 
-#define  timeBeforeAlarm 60
+#define  timeBeforeAlarm 20
 
 void main_alarm(){
 	lcd_clear();
@@ -63,7 +63,11 @@ void main_lcd_wrongCode(){
 int main(void)
 {
 	lcd_init();
+	
+	DDRB = 0xFF;					// set PORTB for compare output
+	DDRA = 0xFF;					// set PORTA for output in main program
 	Buzzert_init();
+	Buzzert_start();
 	
 	Eight7seg_Init();
 	Keypad_init(main_lcd_locked, main_lcd_unlocked, main_lcd_wrongCode);

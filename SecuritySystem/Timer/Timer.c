@@ -1,9 +1,9 @@
 /*
- * Timer.c
- *
- * Created: 05/04/2022 13:26:21
- *  Author: rick
- */ 
+* Timer.c
+*
+* Created: 05/04/2022 13:26:21
+*  Author: rick
+*/
 
 #include <xc.h>
 #include <avr/interrupt.h>
@@ -12,40 +12,38 @@
 
 #define BIT(x) (1 << (x))
 
-volatile int remainingTime = 30;
-static int beepOn = 0;
+volatile long int remainingTime = 30;
+volatile int msCount;
 
 static void (*alarmCallback)(void) = NULL;
 
 void Timer_init(void (*_alarmCallback)(void), int _remainingTime){
 	alarmCallback = _alarmCallback;
 	remainingTime = _remainingTime;
-	OCR1B = 31500;			// 16-bits compare value of counter 1
-	TIMSK |= BIT(4);		// T1 compare match A interrupt enable
-	sei();
-	TCCR1B = 0b00001100;	// compare output disconnected, CTC, RUN
+	msCount = 1000;
+	OCR2 = 150; // Compare value of counter 2
+	TIMSK |= BIT(7); // T2 compare match interrupt enable
+	sei(); // turn_on intr all
+	TCCR2 = 0b00001011; // Initialize T2: timer, prescaler=32, compare output disconnected,CTC,RUN
 }
 
 void Timer_deInit(){
-	TIMSK &= ~(BIT(4));		// T1 compare match A interrupt enable
+	TIMSK &= ~(BIT(7));		// T1 compare match A interrupt enable
 }
 
-
-
-ISR(TIMER1_COMPb_vect) {
-	remainingTime--;
-	
-	if(remainingTime % 10){
-		beepOn =0;
-		Buzzert_start();
+ISR( TIMER2_COMP_vect ) {
+	msCount--; // Increment ms counter
+	if(msCount <= 0){
+		msCount = 1000;
+		remainingTime--;
+		if(remainingTime % 2){
+			Buzzert_start();
+		}else{
+			Buzzert_stop();
+		}
 	}
-	else{
-		beepOn =1;
-		Buzzert_stop();
-	}
-	
-	if (remainingTime < 1){
+	if ( remainingTime < 1) {
 		Timer_deInit();
-		alarmCallback(); 
+		alarmCallback();
 	}
-}
+}
