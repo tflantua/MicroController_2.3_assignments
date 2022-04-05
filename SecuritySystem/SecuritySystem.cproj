@@ -119,24 +119,59 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ADCLaserIO.c">
+    <Compile Include="8t7seg\8t7seg.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ADCLaserIO.h">
+    <Compile Include="8t7seg\8t7seg.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="LCD.C">
+    <Compile Include="ADCLaser\ADCLaserIO.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="LCD.H">
+    <Compile Include="ADCLaser\ADCLaserIO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Keypad\Keypad.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Keypad\Keypad.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LCD\LCD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LCD\LCD.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="SPI\SPI.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SPI\SPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Timer\Timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Timer\Timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="waiting.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="waiting.h">
       <SubType>compile</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LCD" />
+    <Folder Include="ADCLaser" />
+    <Folder Include="Keypad" />
+    <Folder Include="8t7seg" />
+    <Folder Include="Timer" />
+    <Folder Include="SPI" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

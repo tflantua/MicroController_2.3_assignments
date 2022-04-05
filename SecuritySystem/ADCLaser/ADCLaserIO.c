@@ -6,8 +6,8 @@
  */ 
 
 #include <xc.h>
+#include <stdio.h>
 #include <avr/interrupt.h>
-#include "LCD.H"
 #include "ADCLaserIO.h"
 
 #define TRIGGER_VALUE 80
@@ -19,7 +19,9 @@ static void adc_init();
 static void adc_deinit();
 
 void ADCLaserIO_start(void (*_ptr)(uInt16)){
-	callback = _ptr;
+	if(callback == NULL){
+		if (_ptr !=NULL) callback = _ptr;
+	}
 	adc_init();
 	
 	TCCR0=(5<<CS00);
@@ -57,9 +59,7 @@ static void adc_init()
 }
 
 static void adc_deinit(){
-	ADMUX = 0x00;
-	ADCSRA = 0x00;
-	SFIOR = 0x00;
+	ADCSRA &= ~((1<<ADIE)|(1<<ADFR));
 }
 
 /* 

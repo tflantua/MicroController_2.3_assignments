@@ -2,9 +2,19 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-ADCLaserIO.c
+8t7seg\8t7seg.c
 
-LCD.C
+ADCLaser\ADCLaserIO.c
+
+Keypad\Keypad.c
+
+LCD\LCD.c
 
 main.c
+
+SPI\SPI.c
+
+Timer\Timer.c
+
+waiting.c
 

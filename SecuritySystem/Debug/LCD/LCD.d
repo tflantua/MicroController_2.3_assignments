@@ -1,4 +1,4 @@
-LCD.d LCD.o: .././LCD.C \
+LCD/LCD.d LCD/LCD.o: ../LCD/LCD.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\io.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\sfr_defs.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\inttypes.h \
@@ -10,13 +10,15 @@ LCD.d LCD.o: .././LCD.C \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h \
+ ../LCD/LCD.H \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h \
- .././LCD.H c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h \
- c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h \
- c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h
+ ../LCD/../waiting.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\io.h:
 
@@ -40,18 +42,20 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
-
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
-
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
-
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h:
 
-.././LCD.H:
+../LCD/LCD.H:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
+
+../LCD/../waiting.h:

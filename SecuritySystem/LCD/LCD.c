@@ -16,10 +16,10 @@
 
 #define F_CPU 8e6
 
-#include <avr/io.h>                                                              
-#include <util/delay.h>
+#include <avr/io.h>    
 #include <avr/interrupt.h>
 #include "LCD.H"
+#include "../waiting.h"
 
 #define LCD_E 	6  // RA6 UNI-6
 #define LCD_RS	4  // RA4 UNI-6
@@ -30,22 +30,6 @@ void lcd_write_string(char *str);
 void lcd_write_data(unsigned char byte);
 void lcd_write_cmd(unsigned char byte);
 
-
-/******************************************************************
-short:			Busy wait number of millisecs
-inputs:			int ms (Number of millisecs to busy wait)
-outputs:
-notes:			Busy wait, not very accurate. Make sure (external)
-clock value is set. This is used by _delay_ms inside
-util/delay.h
-Version :    	DMK, Initial code
-*******************************************************************/
-void wait( int ms ) {
-	for (int i=0; i<ms; i++) {
-		_delay_ms( 1 );		// library function (max 30 ms at 8MHz)
-	}
-}
-
 /******************************************************************
 short:			Strobe LCD module E pin --__
 inputs:
@@ -55,9 +39,9 @@ Version :    	DMK, Initial code
 *******************************************************************/
 void lcd_strobe_lcd_e(void) {
 	PORTA |= (1<<LCD_E);	// E high
-	_delay_ms(1);			// nodig
+	waitFunction(1);			// nodig
 	PORTA &= ~(1<<LCD_E);  	// E low
-	_delay_ms(1);			// nodig?
+	waitFunction(1);			// nodig?
 }
 
 

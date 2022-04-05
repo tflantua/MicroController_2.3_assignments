@@ -1,4 +1,4 @@
-ADCLaserIO.d ADCLaserIO.o: .././ADCLaserIO.c \
+Timer/Timer.d Timer/Timer.o: ../Timer/Timer.c \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\cci.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\io.h \
@@ -13,13 +13,9 @@ ADCLaserIO.d ADCLaserIO.o: .././ADCLaserIO.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h \
- .././LCD.H c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h \
- c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
- .././ADCLaserIO.h
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -49,18 +45,8 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h:
 
-.././LCD.H:
-
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
-
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
-
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
-
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
-
-.././ADCLaserIO.h:

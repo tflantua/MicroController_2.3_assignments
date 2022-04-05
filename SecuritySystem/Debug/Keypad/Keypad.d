@@ -1,4 +1,4 @@
-main.d main.o: .././main.c \
+Keypad/Keypad.d Keypad/Keypad.o: ../Keypad/Keypad.c \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\cci.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\io.h \
@@ -12,16 +12,11 @@ main.d main.o: .././main.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h \
- .././waiting.h .././LCD/LCD.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
- .././ADCLaser/ADCLaserIO.h .././Keypad/Keypad.h .././8t7seg/8t7seg.h \
- .././Timer/Timer.h
+ ../Keypad/Keypad.h ../Keypad/../ADCLaser/ADCLaserIO.h \
+ ../Keypad/../8t7seg/8t7seg.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -49,28 +44,14 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h:
-
-.././waiting.h:
-
-.././LCD/LCD.h:
-
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
 
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
+../Keypad/Keypad.h:
 
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
+../Keypad/../ADCLaser/ADCLaserIO.h:
 
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
-
-.././ADCLaser/ADCLaserIO.h:
-
-.././Keypad/Keypad.h:
-
-.././8t7seg/8t7seg.h:
-
-.././Timer/Timer.h:
+../Keypad/../8t7seg/8t7seg.h:
