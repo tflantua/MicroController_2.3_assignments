@@ -17,6 +17,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "8t7seg", "8t7seg\8t7seg.cpr
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "buzzer", "buzzer\buzzer.cproj", "{549735F1-BF4A-407A-87C0-354FB7F023EB}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "ADC", "ADC\ADC.cproj", "{702C6C20-D445-4E0E-AEF5-09FC19B5A9A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -51,6 +53,10 @@ Global
 		{549735F1-BF4A-407A-87C0-354FB7F023EB}.Debug|AVR.Build.0 = Debug|AVR
 		{549735F1-BF4A-407A-87C0-354FB7F023EB}.Release|AVR.ActiveCfg = Release|AVR
 		{549735F1-BF4A-407A-87C0-354FB7F023EB}.Release|AVR.Build.0 = Release|AVR
+		{702C6C20-D445-4E0E-AEF5-09FC19B5A9A8}.Debug|AVR.ActiveCfg = Debug|AVR
+		{702C6C20-D445-4E0E-AEF5-09FC19B5A9A8}.Debug|AVR.Build.0 = Debug|AVR
+		{702C6C20-D445-4E0E-AEF5-09FC19B5A9A8}.Release|AVR.ActiveCfg = Release|AVR
+		{702C6C20-D445-4E0E-AEF5-09FC19B5A9A8}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
